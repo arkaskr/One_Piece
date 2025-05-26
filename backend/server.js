@@ -16,22 +16,27 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors({
-  origin: 'https://one-piece24.vercel.app',
-  credentials: true, // if you're using cookies or sessions
-}))
 
+const corsOptions = {
+  origin: 'https://one-piece24.vercel.app',
+  credentials: true,
+}
+
+app.use(cors(corsOptions))
+
+// Explicitly handle OPTIONS
+app.options('*', cors(corsOptions))
 
 // api endpoints
-app.use('/api/user',userRouter)
-app.use('/api/product',productRouter)
-app.use('/api/cart',cartRouter)
-app.use('/api/order',orderRouter)
+app.use('/api/user', userRouter)
+app.use('/api/product', productRouter)
+app.use('/api/cart', cartRouter)
+app.use('/api/order', orderRouter)
 
-app.get('/',(req,res)=>{
-    res.send("API Working")
+app.get('/', (req, res) => {
+  res.send("API Working")
 })
 
-app.listen(port,()=>{
-    console.log("Server started on Port: "+port)
+app.listen(port, () => {
+  console.log("Server started on Port: "+port)
 })
