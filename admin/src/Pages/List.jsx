@@ -50,7 +50,7 @@ const List = ({token}) => {
 
         {/* ------ List Table Title ------ */}
 
-        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border border-slate-400 bg-gray-100 text-sm rounded-md'>
+        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border border-blue-300 text-sm rounded-md' style={{ backgroundColor: "rgb(102, 204, 255, 0.1)" }}>
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
@@ -62,7 +62,7 @@ const List = ({token}) => {
 
         {
           list.map((item,index)=>(
-            <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border border-slate-300 text-sm rounded-md' key={index}>
+            <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border border-blue-200 text-sm rounded-md' key={index}>
               <img className='w-12' src={item.image[0]} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>

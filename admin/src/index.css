@@ -1,28 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
 
 @import "tailwindcss";
 
-.active{
-    background-color: rgba(159, 230, 188, 0.366);
-    border-color: rgb(37, 86, 33);
+.active {
+  background-color: rgba(102, 204, 255, 0.366);
+  border-color: rgb(31, 152, 213);
 }
 
-*{
-    font-family: Outfit;
+* {
+  font-family: Outfit;
 }
 
 .prata-regular {
-    font-family: "Prata", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  ::-webkit-scrollbar{
-    display: none;
- }
+::-webkit-scrollbar {
+  display: none;
+}
 
- select,input,textarea{
-    border: 1px solid rgb(214, 214, 214);
-    border-radius: 4px;
-    outline-color: rgb(37, 86, 33);
- }
+select,
+input,
+textarea {
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 4px;
+  outline-color: rgb(37, 86, 33);
+}

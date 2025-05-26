@@ -146,7 +146,7 @@ const Add = ({token}) => {
         <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
       </div>
 
-      <button className='bg-black text-white w-28 py-3 mt-4 rounded-md cursor-pointer' type='submit'>Add</button>
+      <button className='border border-black text-black w-28 py-3 mt-4 rounded-md cursor-pointer' type='submit' style={{ backgroundColor: "rgb(102, 204, 255, 0.6)" }}>Add</button>
 
     </form>
   )

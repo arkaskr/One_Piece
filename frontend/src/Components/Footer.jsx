@@ -3,11 +3,11 @@ import { assets } from '../Assets/assets'
 const Footer = () => {
   return (
     <div>
-        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
+        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-20 text-sm'>
             <div>
                 <img src={assets.logo} className='mb-[-1rem] mt-[-3rem] w-32' alt="" />
                 <p className='w-full md:w-2/3 text-gray-600'>
-                Lorem Ipsum is a type of placeholder (dummy) text used in the design, publishing, and web development world
+                Thank You for visiting our website, if you are an One Piece fan too then this is for you <b>Kaizoku ou ni ore wa naru</b>
                 </p>
             </div>
 

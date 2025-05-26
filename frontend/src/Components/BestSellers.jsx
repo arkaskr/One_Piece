@@ -14,10 +14,10 @@ useEffect(()=>{
 },[products])
 
   return (
-    <div className='mb-10'>
+    <div className='my-10'>
         <div className='text-center py-8 text-3xl'>
             <Title text1={'BEST '} text2={'SELLERS'}/>
-            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>Lorem Ipsum is a type of placeholder (dummy) text used in the design, publishing, and web development world</p>
+            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>This Section contains the Best Items that our customers have liked and purchased the most!</p>
         </div>
 
         {/* Rendering Products */}
