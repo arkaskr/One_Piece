@@ -9,7 +9,7 @@ const CollectAccessories = () => {
 
   useEffect(() => {
     const accessory = products.filter((item) => item.accessory);
-    setAccessories(accessory.slice(0, 5));
+    setAccessories(accessory.slice(0, 10));
   }, [products]);
 
   return (

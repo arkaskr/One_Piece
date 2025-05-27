@@ -104,7 +104,7 @@ const Collection = () => {
               <input type="checkbox" className='w-3' value={'Action Figure'} onChange={toggleAccessory} />Action Figure
             </p>
             <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Devil Fruits'} onChange={toggleAccessory} />Devil Fruits
+              <input type="checkbox" className='w-3' value={'Devil Fruit'} onChange={toggleAccessory} />Devil Fruits
             </p>
           </div>
         </div>
