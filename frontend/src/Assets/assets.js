@@ -16,7 +16,7 @@ import contact_img from './contactus.jpg'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
-import banner from './banner.png'
+import banner from './baner.png'
 
 export const assets = {
     logo,
