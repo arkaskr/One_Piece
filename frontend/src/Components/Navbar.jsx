@@ -52,6 +52,14 @@ const Navbar = () => {
           <p>CONTACT</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
+        <a
+          href="https://one-piece-admin.vercel.app/"
+          target=""
+          rel=""
+          className="border rounded-full p-2 mt-[-8px]"
+        >
+          Admin Panel
+        </a>
       </ul>
 
       <div className="flex items-center gap-6">
