@@ -160,6 +160,15 @@ const Navbar = () => {
           >
             CONTACT
           </NavLink>
+          <a
+          onClick={() => setVisible(false)}
+          href="https://one-piece-admin.vercel.app/"
+          target=""
+          rel=""
+          className="py-2 pl-6 border"
+        >
+          ADMIN PANEL
+        </a>
         </div>
       </div>
     </div>
