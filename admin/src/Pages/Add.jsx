@@ -14,9 +14,11 @@ const Add = ({token}) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("Men");
-  const [subCategory, setSubCategory] = useState("Topwear");
-  const [bestseller, setBestsellor] = useState(false);
+  const [category, setCategory] = useState("None");
+  const [subCategory, setSubCategory] = useState("None");
+  const [accessoryType, setAccessoryType] = useState("None");
+  const [bestseller, setBestseller] = useState(false);
+  const [accessory, setAccessory] = useState(false);
   const [sizes, setSizes] = useState([]);
 
   const onSubmitHandler = async(e) => {
@@ -32,7 +34,9 @@ const Add = ({token}) => {
       formData.append("price",price)
       formData.append("category",category)
       formData.append("subCategory",subCategory)
+      formData.append("accessoryType", accessoryType)
       formData.append("bestseller",bestseller)
+      formData.append("accessory",accessory)
       formData.append("sizes",JSON.stringify(sizes))
 
       image1 && formData.append("image1",image1)
@@ -51,6 +55,12 @@ const Add = ({token}) => {
         setImage2(false)
         setImage3(false)
         setImage4(false)
+        setCategory("None");
+        setSubCategory("None");
+        setAccessoryType("None");
+        setBestseller(false);
+        setAccessory(false);
+        setSizes([]);
       }
       else{
         toast.error(response.data.message)
@@ -99,29 +109,29 @@ const Add = ({token}) => {
       <div className='flex flex-col sm:flex-row gap-2 sm:gap-8 w-full'>
         <div>
           <p className='mb-2'>Product Category</p>
-          <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
+          <select value={category} onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
             <option value="Men">Men</option>
             <option value="Women">Women</option>
             <option value="Kids">Kids</option>
-            <option value="Null">None</option>
+            <option value="None">None</option>
           </select>
         </div>
         <div>
           <p className='mb-2'>Sub-Category</p>
-          <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
+          <select value={subCategory} onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
             <option value="Topwear">Topwear</option>
             <option value="Bottomwear">Bottomwear</option>
             <option value="Winterwear">Winterwear</option>
-            <option value="Null">None</option>
+            <option value="None">None</option>
           </select>
         </div>
         <div>
           <p className='mb-2'>Accessories</p>
-          <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
+          <select value={accessoryType} onChange={(e) => setAccessoryType(e.target.value)} className='w-full px-3 py-2'>
             <option value="Key Ring">Key Ring</option>
             <option value="Action Figure">Action Figure</option>
             <option value="Devil Fruit">Devil Fruit</option>
-            <option value="Null">None</option>
+            <option value="None">None</option>
           </select>
         </div>
 
@@ -153,8 +163,11 @@ const Add = ({token}) => {
       </div>
 
       <div className='flex gap-2 mt-2'>
-        <input onChange={() => setBestsellor(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
-        <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
+        <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
+        <label className='cursor-pointer' htmlFor="bestseller">Add to Bestseller</label>
+
+        <input onChange={() => setAccessory(prev => !prev)} checked={accessory} type="checkbox" id='accessory' />
+        <label className='cursor-pointer' htmlFor="accessory">Add to Accessory</label>
       </div>
 
       <button className='border border-black text-black w-28 py-3 mt-4 rounded-md cursor-pointer' type='submit' style={{ backgroundColor: "rgb(102, 204, 255, 0.6)" }}>Add</button>

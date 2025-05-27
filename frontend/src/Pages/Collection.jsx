@@ -11,6 +11,7 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
+  const [accessoryType,setAccessoryType]=useState([]);
   const [sortType,setsortType]=useState('relevant')
 
   const toggleCategory = (e) => {
@@ -29,6 +30,14 @@ const Collection = () => {
       setSubCategory(prev => [...prev, e.target.value])
     }
   }
+  const toggleAccessory = (e) => {
+    if (accessoryType.includes(e.target.value)) {
+      setAccessoryType(prev => prev.filter(item => item !== e.target.value))
+    }
+    else {
+      setAccessoryType(prev => [...prev, e.target.value])
+    }
+  }
 
   const applyFilter = () => {
     let productsCopy = products.slice();
@@ -43,6 +52,10 @@ const Collection = () => {
     if (subCategory.length > 0) {
       productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory));
     }
+    if (accessoryType.length > 0) {
+      productsCopy = productsCopy.filter(item => accessoryType.includes(item.accessoryType));
+    }
+
     setFilterProducts(productsCopy);
   }
 
@@ -66,7 +79,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory,search,showSearch,products])
+  }, [category, subCategory,accessoryType,search,showSearch,products])
 
   useEffect(() => {
     sortProduct();
@@ -85,13 +98,13 @@ const Collection = () => {
           <p className='mb-3 text-sm font-medium'>ACCESSORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
             <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Key Ring'} onChange={toggleCategory} />Key Rings
+              <input type="checkbox" className='w-3' value={'Key Ring'} onChange={toggleAccessory} />Key Rings
             </p>
             <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Action Figure'} onChange={toggleCategory} />Action Figure
+              <input type="checkbox" className='w-3' value={'Action Figure'} onChange={toggleAccessory} />Action Figure
             </p>
             <p className='flex gap-2'>
-              <input type="checkbox" className='w-3' value={'Devil Fruits'} onChange={toggleCategory} />Devil Fruits
+              <input type="checkbox" className='w-3' value={'Devil Fruits'} onChange={toggleAccessory} />Devil Fruits
             </p>
           </div>
         </div>
