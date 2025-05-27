@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../Context/ShopContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Eye, EyeOff} from "lucide-react";
 
 const Login = () => {
 
   const [currentState, setCurrentState] = useState('Login');
+  const [showPassword, setShowPassword] = useState(false);
   const { token, setToken, navigate, backendUrl,getUserCart } = useContext(ShopContext);
 
   const [name, setName] = useState('')
@@ -69,7 +71,22 @@ const Login = () => {
       </div>
       {currentState === 'Login' ? '' : <input onChange={(e) => setName(e.target.value)} value={name} type="text" className='w-full px-3 py-2 border rounded-md border-gray-800 ' placeholder='Name' required />}
       <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" className='w-full px-3 py-2 border rounded-md border-gray-800' placeholder='Email' required />
-      <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className='w-full px-3 py-2 border rounded-md border-gray-800' placeholder='Password' required />
+      
+      <div className='relative'>
+        <input onChange={(e) => setPassword(e.target.value)} value={password} type={showPassword ? "text" : "password"} className='w-full px-3 py-2 pr-40 border rounded-md border-gray-800' placeholder='Password' required />
+
+        <button
+                  type="button"
+                  className="absolute inset-y-0 right-0  pr-3 flex items-center"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5 text-base-content/40" />
+                  ) : (
+                    <Eye className="h-5 w-5 text-base-content/40" />
+                  )}
+                </button>
+      </div>
 
       <div className='w-full flex justify-between text-sm mt-[-8px]'>
         <p className='pl-1 cursor-pointer'>Forgot Password</p>
