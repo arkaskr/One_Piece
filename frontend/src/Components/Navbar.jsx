@@ -70,37 +70,13 @@ const Navbar = () => {
           alt=""
         />
 
-        <div
-          onClick={() =>
-            token
-              ? setProfileDropdownOpen(!profileDropdownOpen)
-              : navigate("/login")
-          }
-          className="group relative"
-        >
+        <Link to="/profile">
           <img
             src={assets.profile_icon}
             className="w-5 cursor-pointer"
             alt=""
           />
-          {/* ------ Dropdown menu ------ */}
-          {token && profileDropdownOpen && (
-            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
-                <p
-                  onClick={() => navigate("/orders")}
-                  className="cursor-pointer hover:text-black"
-                >
-                  Orders
-                </p>
-                <p onClick={logout} className="cursor-pointer hover:text-black">
-                  Logout
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+        </Link>
 
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
@@ -161,14 +137,14 @@ const Navbar = () => {
             CONTACT
           </NavLink>
           <a
-          onClick={() => setVisible(false)}
-          href="https://one-piece-admin.vercel.app/"
-          target=""
-          rel=""
-          className="py-2 pl-6 border"
-        >
-          ADMIN PANEL
-        </a>
+            onClick={() => setVisible(false)}
+            href="https://one-piece-admin.vercel.app/"
+            target=""
+            rel=""
+            className="py-2 pl-6 border"
+          >
+            ADMIN PANEL
+          </a>
         </div>
       </div>
     </div>
