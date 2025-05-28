@@ -16,7 +16,7 @@ const Contact = () => {
           <p className='font-semibold text-xl text-gray-600'>Our Store</p>
           <p className='text-gray-500'>Park Street <br /> Lane 12. 4th Block</p>
           <p className='text-gray-500'>Tel: +91 1122334455 <br /> Email: dummy@gmail.com</p>
-          <p className='font-semibold text-xl text-gray-600'>Careers at Shopiee</p>
+          <p className='font-semibold text-xl text-gray-600'>Careers at OP</p>
           <p className='text-gray-500'>Learn more about our teams and jon openings</p>
           <button className='rounded-lg border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
         </div>

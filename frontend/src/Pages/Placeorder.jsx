@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 const Placeorder = () => {
 
   const [method, setMethod] = useState('cod');
-  const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
+  const { navigate, backendUrl, token, cartItems,clearCart,clearCartBackend, getCartAmount, delivery_fee, products } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -61,7 +61,8 @@ const Placeorder = () => {
           const response= await axios.post(backendUrl+'/api/order/place',orderData,{headers:{token}})
           
           if(response.data.success){
-            setCartItems({})
+            clearCart()
+            await clearCartBackend();
             toast.success("Order Placed")
             navigate('/orders')
           }else{

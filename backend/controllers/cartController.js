@@ -69,4 +69,19 @@ const getUserCart=async(req,res)=>{
     }
 }
 
-export{addToCart,updateCart,getUserCart};
+// Clear user cart
+const clearCart = async (req, res) => {
+  try {
+    const { userId } = req.body; // or get userId from req.user if you decode token
+
+    // Set user's cartData to empty object
+    await userModel.findByIdAndUpdate(userId, { cartData: {} });
+
+    res.json({ success: true, message: "Cart cleared successfully" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+export { addToCart, updateCart, getUserCart, clearCart };
