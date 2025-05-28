@@ -11,19 +11,23 @@ function ProductItem({ id, image, name, price }) {
 
   return (
     <Link
-      className='text-gray-700 cursor-pointer'
+      className='text-gray-700 cursor-pointer flex flex-col'
       to={`/product/${id}`}
       onClick={handleClick}
     >
-      <div className='overflow-hidden'>
+      <div className='overflow-hidden w-full aspect-square'>
         <img
           src={image[0]}
-          className='hover:scale-110 transition-transform duration-500 ease-in-out'
+          className='hover:scale-110 transition-transform duration-500 ease-in-out object-cover w-full h-full'
           alt="failed to load"
         />
       </div>
-      <p className='pt-3 pb-1 text-sm'>{name}</p>
-      <p className='text-sm font-medium'>{currency}{price}</p>
+
+      <div className='flex items-center justify-center h-12'>
+        <p className='text-center text-sm'>{name}</p>
+      </div>
+
+      <p className='text-center text-sm font-medium'>{currency}{price}</p>
     </Link>
   );
 }
