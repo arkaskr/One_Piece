@@ -33,7 +33,7 @@ const Footer = () => {
         <div>
             <hr />
             <p className='py-5 text-sm text-center'>
-                &copy; Copyright 2025@ shopiee.com-All Right Reserved.
+                &copy; Copyright 2025@ onepiece.com-All Right Reserved.
             </p>
         </div>
     </div>
